@@ -1,0 +1,9 @@
+---
+- hosts: agent
+  become: yes
+  tasks:
+  - name: Install nginx package
+    yum: name={{ item }} state=present
+    with_items:
+    - git
+    

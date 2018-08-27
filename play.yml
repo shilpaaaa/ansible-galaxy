@@ -1,0 +1,10 @@
+---
+- hosts: agent
+  become: yes
+  tasks:
+  - name: Install ansible package
+    yum: name={{ item }} state=present
+    with_items:
+    - ansible
+    - telnet
+
